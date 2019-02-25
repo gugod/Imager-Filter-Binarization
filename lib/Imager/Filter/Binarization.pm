@@ -18,9 +18,23 @@ package Imager::Filter::Binarization;
 
 =head1 DESCRIPTION
 
-This module provides several implementations of image binarization
-algorithms. It assumes the input image is already grayscale, and
-therefore use only the first channel (red) to perform binarization.
+This module implements 2 different image binarization
+algorithms identified by C<"niblack">, and C<"sauvola">.
+
+    $img->filter(
+        type => "binarization",
+        method => "niblack",
+        geometry => "5x5"
+    );
+
+    $img->filter(
+        type => "binarization",
+        method => "sauvola",
+        geometry => "5x5"
+    );
+
+The input image C<$img> is assumed to be grayscale, only the first channel (red)
+is used to perform binarization.
 
 =cut
 
